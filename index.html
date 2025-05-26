@@ -23,8 +23,22 @@
     .hover\:text-gold:hover { color: #b38136; }
     .hover\:underline:hover { text-decoration: underline; }
     .border-gold { border-color: #b38136; }
-    .textured-bg { background-color: #0a0a0a; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 10px); }
-    #lightbox-img { object-fit: contain; width: 90vw; max-height: 90vh; }
+    .textured-bg {
+      background-color: #0a0a0a;
+      background-image: repeating-linear-gradient(
+        135deg,
+        rgba(255,255,255,0.05) 0px,
+        rgba(255,255,255,0.05) 1px,
+        transparent 1px,
+        transparent 10px
+      );
+    }
+    /* Lightbox images fit mobile */
+    #lightbox-img {
+      object-fit: contain;
+      width: 90vw;
+      max-height: 90vh;
+    }
   </style>
 </head>
 <body class="textured-bg text-gray-100 font-sans">
@@ -59,14 +73,17 @@
   </div>
 
   <!-- Home Hero -->
-  <section id="home" class="relative h-screen bg-cover bg-center" style="background-image:url('images/hero.jpg')">
+  <section id="home" class="relative h-screen bg-cover bg-center" 
+           style="background-image:url('images/hero.jpg')">
     <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-darkbg to-transparent"></div>
   </section>
 
   <!-- About Us -->
   <section id="about" class="py-20 px-4 max-w-4xl mx-auto text-center fade-in textured-bg">
     <h2 class="text-4xl font-sans font-semibold uppercase mb-6 text-gold">About Us</h2>
-    <p class="mb-8">Fides, Latin for “faith, trust, loyalty,” are key concepts...</p>
+    <p class="mb-8">
+      Fides, Latin for “faith, trust, loyalty,” are key concepts for the young Quartet at the beginning of their chamber music training and professional careers. It is the belief that it is worthwhile to walk a path together, and the trust that its value is preserved and fulfilled only through the act of walking it. Since its founding in 2022, the Quartet has been studying with great success in the chamber music class of Professor Alexander Pavlovsky, first violinist of the internationally acclaimed Jerusalem Quartet.
+    </p>
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
       <div class="member" data-member="moritz">
         <img src="images/member-moritz.jpg" alt="Moritz Engelich" class="member-thumb w-32 h-32 rounded-full mx-auto mb-2 object-cover"/>
@@ -93,9 +110,8 @@
 
   <!-- Bio Modal -->
   <div id="bio-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 hidden z-40">
-    <div class="bg-darkbg bg-opacity-90 p-6 rounded-lg max-w-3xl mx-auto w-11/12 md:flex md:space-x-6 relative">
+    <div class="bg-darkbg bg-opacity-90 p-6 rounded-lg max-w-3xl w-11/12 md:flex md:space-x-6 relative">
       <button id="bio-close" class="absolute top-2 right-2 text-2xl text-gray-300">&times;</button>
-      <!-- Image on md+ -->
       <div class="hidden md:block md:w-1/3">
         <img id="bio-img" src="" alt="" class="rounded w-full object-cover"/>
       </div>
@@ -106,33 +122,142 @@
     </div>
   </div>
 
-  <!-- ... rest sections remain unchanged ... -->
+  <!-- Concerts -->
+  <section id="concerts" class="py-20 textured-bg bg-gray-800 border-t-4 border-b-4 border-gold">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-4xl font-sans font-semibold uppercase mb-6 text-gold text-center">Upcoming Concerts</h2>
+      <ul class="space-y-4">
+        <li class="flex justify-between border-b border-gray-700 pb-2 fade-in">
+          <span>May 31, 2025 – Ehrbar Saal, Vienna @ 11:00</span>
+          <a href="#" class="text-lg text-gold">Tickets</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Repertoire -->
+  <section id="repertoire" class="py-20 px-4 max-w-4xl mx-auto fade-in textured-bg">
+    <h2 class="text-4xl font-sans font-semibold uppercase mb-6 text-gold text-center">Repertoire</h2>
+    <details class="bg-gray-800 p-4 rounded-lg">
+      <summary class="cursor-pointer font-semibold">Our Repertoire</summary>
+      <ul class="mt-2 list-disc list-inside">
+        <li>J. Haydn: String Quartet No.5 F Minor, Op.20</li>
+        <li>W. Mozart: String Quartet No.15 D Minor, K.421</li>
+        <li>J. Brahms: String Quartet No.1</li>
+        <li>P.I. Tchaikovsky: String Quartet No.1 Op.11</li>
+        <li>D. Shostakovich: String Quartet No.8</li>
+        <li>L. Janáček: String Quartet No.1 (Kreutzer Sonate)</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- Photos Gallery & Lightbox -->
+  <section id="photos" class="py-20 textured-bg bg-gray-800 border-t-4 border-b-4 border-gold">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-4xl font-sans font-semibold uppercase mb-6 text-gold text-center">Photos</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <img src="images/photo2-thumb.jpeg" data-full="images/photo2.jpeg" alt="Performance" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
+        <img src="images/photo3-thumb.jpeg" data-full="images/photo3.jpeg" alt="Portrait" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
+        <img src="images/photo4-thumb.jpeg" data-full="images/photo4.jpeg" alt="Fun" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
+        <img src="images/photo5-thumb.jpeg" data-full="images/photo5.jpeg" alt="Fun" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
+        <img src="images/photo6-thumb.jpg"  data-full="images/photo6.jpg"  alt="Fun" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
+      </div>
+    </div>
+  </section>
+  <div id="lightbox" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 backdrop-blur-sm hidden z-50">
+    <button id="lightbox-prev" class="absolute left-5 text-white text-4xl z-50">&#8592;</button>
+    <img id="lightbox-img" class="rounded" src="" alt=""/>
+    <button id="lightbox-next" class="absolute right-5 text-white text-4xl z-50">&#8594;</button>
+    <button id="lightbox-close" class="absolute top-5 right-5 text-white text-3xl z-50">&times;</button>
+  </div>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-4 max-w-md mx-auto fade-in textured-bg">
+    <h2 class="text-4xl font-sans font-semibold uppercase mb-6 text-gold text-center">Contact</h2>
+    <form action="mailto:Fides@gmail.com" method="GET" enctype="text/plain" class="space-y-4">
+      <input type="text" name="name"     placeholder="Your Name"  required class="w-full p-3 rounded bg-gray-700"/>
+      <input type="email" name="email"   placeholder="Your Email" required class="w-full p-3 rounded bg-gray-700"/>
+      <textarea     name="message" rows="5" placeholder="Message" required class="w-full p-3 rounded bg-gray-700"></textarea>
+      <button type="submit" class="w-full py-3 font-serif text-lg uppercase tracking-wide border border-gold hover:bg-gold hover:text-gray-900 transition">Send Message</button>
+    </form>
+    <p class="mt-6 text-center">
+      Email: <a href="mailto:Fides@gmail.com" class="hover:text-gold hover:underline">Fides@gmail.com</a><br/>
+      Phone: <a href="tel:+43123456789"         class="hover:text-gold hover:underline">+43 1 234 567 89</a>
+    </p>
+  </section>
 
   <script>
-    // Biographies data
+    // Scroll Fade-in
+    document.querySelectorAll('.fade-in').forEach(el => {
+      el.classList.add('opacity-0','translate-y-10','transition','duration-700');
+    });
+    const obs = new IntersectionObserver((entries, io) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('opacity-100','translate-y-0');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+    // Lightbox
+    const thumbs = [...document.querySelectorAll('.photo-thumb')];
+    const imgs   = thumbs.map(i => i.dataset.full);
+    let idx = 0;
+    const lb = document.getElementById('lightbox'),
+          lbi = document.getElementById('lightbox-img');
+    thumbs.forEach((t,i) => t.onclick = () => {
+      idx = i;
+      lbi.src = imgs[idx];
+      lb.classList.remove('hidden');
+    });
+    document.getElementById('lightbox-prev').onclick = () => {
+      idx = (idx - 1 + imgs.length) % imgs.length;
+      lbi.src = imgs[idx];
+    };
+    document.getElementById('lightbox-next').onclick = () => {
+      idx = (idx + 1) % imgs.length;
+      lbi.src = imgs[idx];
+    };
+    document.getElementById('lightbox-close').onclick = () => lb.classList.add('hidden');
+    lb.onclick = e => { if (e.target===lb) lb.classList.add('hidden'); };
+
+    // Mobile Menu
+    const menuBtn   = document.getElementById('menu-btn'),
+          menuModal = document.getElementById('menu-modal'),
+          menuClose = document.getElementById('menu-close');
+    menuBtn.onclick   = () => menuModal.classList.remove('hidden');
+    menuClose.onclick = () => menuModal.classList.add('hidden');
+    document.querySelectorAll('#menu-modal a').forEach(a => {
+      a.onclick = () => menuModal.classList.add('hidden');
+    });
+
+    // Bio Modal
     const bios = {
       moritz: {
         name: 'Moritz Leander Engelich',
         img: 'images/bio-moritz.jpg',
-        text: `Moritz Leander Engelich (born 2000) is from Vienna. He began learning violin at...` // truncated for brevity
+        text: `Moritz Leander Engelich (born 2000) is from Vienna. He began learning violin at the age of five with Ivana Sladki-Buxbaum, continued with Arkadij Winokurov and Wladislaw Winokurov, and is currently studying under Anke Schittenhelm at the University of Music and Performing Arts Graz. He gave his first full-length recital at the age of 12 in Vienna, featuring the world premiere of Andreas Bakse’s Sonata for Violin and Piano. As a student at Vienna’s music schools and a graduate of the Music High School of Vienna, he gained extensive orchestral experience as a soloist, concertmaster, and section leader. He was active as a member of his music school’s orchestra, the combined orchestra of Vienna’s music schools, Jeunesse summer orchestra camps, and more. He is a multiple-time award winner of national competitions. At the age of 16, he participated in a preparatory chamber music course led by Prof. Dr. Johannes Meissl (Artis Quartet) with Prof. Vida Vujić. He has refined his skills in numerous masterclasses with domestic and international experts, including Christian Altenburger, Maria Egelhof, Daniel Sepec, Erik Schumann, David Frühwirth, Markus Däunert, among others. From 2018 to 2023, he was a founding member and concertmaster of the JungeKünsteOrchester (Young Arts Orchestra) in Vienna. This self-financed project orchestra of Austrian music academy students regularly gave orchestral and chamber music performances on Vienna’s concert scene, such as in Muth and Ehrbar Saal.`
       },
       timotej: {
         name: 'Timotej Willewaldt',
         img: 'images/bio-timotej.jpg',
-        text: `Timotej Willewaldt (born 2002) began his musical education...`
+        text: `Timotej Willewaldt (born 2002) began his musical education at the Jesenice Music School with Prof. Natalija Šimunović, continuing after seven years at KGBL (Ljubljana Conservatory of Music and Ballet) with Prof. Tatjana Špragar. He is currently in the third year of undergraduate study at the University of Music and Performing Arts Graz with Prof. Anke Schittenhelm and also studies with Prof. Giovanni Guzzo. As a soloist and chamber musician, he has competed in many national and international competitions, winning top prizes. Most notably, he won 2nd prize in the solo category and 1st in the chamber music category at the TEMSIG competition, where he also received four gold plaques and two special awards. In 2021, he received the Škerjanc Award from the Ljubljana Conservatory for his contributions to the school's reputation and success with the string quartet Ameba. He is a member, frequent leader, and soloist of the chamber string orchestra Camerata Laibach and regularly performs in various ad hoc chamber groups with peers. He is a scholarship recipient of the Gallus Foundation, which has twice awarded him a solo concert in the Slovenian Philharmonic Hall. He has also participated in many of the foundation’s other projects. In recent years, he has collaborated intensively with the young generation of composers and regularly performs new works within KGBL, the Ljubljana Youth Music Society, KD Sotočje, and the Odeon Cultural Society, which he founded in 2023 and also presides over. He is also emerging as an organizer, having hosted concerts for all of his ensembles in his home municipality for several years. He co-organized and helped establish the Glasba mladih (Music of the Youth) project and founded the Slovenski mladi abonma (Slovenian Youth Subscription Series), a concert series for young Slovenian musicians, which has taken place in Radovljica since 2022.`
       },
       ismini: {
         name: 'Ismini Sotiria Valma',
         img: 'images/bio-ismini.jpg',
-        text: `Ismini Sotiria Valma (born 2000) began studying theory...`
+        text: `Ismini Sotiria Valma (born 2000) began studying theory and solfeggio at the age of six at the State Conservatory in Patras, Greece. At the age of eight, she began violin lessons with teacher Olga Milkova. After ten years of study at the State Conservatory, she graduated with a violin diploma, graded "Excellent with distinction." At the ages of 10 and 14, she participated in national violin competitions and won first and second prizes. In 2012, she joined the conservatory orchestra and performed in all of its concerts until 2018, collaborating with talented conductors from the Greek music scene. She frequently performed as a soloist with the orchestra and, at the age of 17, made her operatic debut in a production of a Mozart opera by the State Regional Theater of Patras. In 2019, she was admitted to the University of Music and Performing Arts Graz, where she studied with Prof. Anke Schittenhelm, graduating in January 2024. Simultaneously, she began viola studies with Prof. Peter Barsony and is continuing her violin studies at the university’s pedagogy department.`
       },
       patrik: {
         name: 'Patrik Zastko',
         img: 'images/bio-patrik.jpg',
-        text: `Patrik Zastko (born 2000), from Zvolen, Slovakia...`
+        text: `Patrik Zastko (born 2000), from Zvolen, Slovakia, began playing the cello at age 12 under Stanislava Zobalová. He continued his studies at the conservatory in Košice with Milan Červenák. After graduating, he pursued further studies at the University of Music and Performing Arts Graz with Prof. Johannes Krebs. Additionally, he has had the privilege of studying chamber music with renowned musicians such as Prof. Alexander Pavlovsky and Prof. Chia Chou. He actively participates in various masterclasses with distinguished artists, including Frans Helmerson, the Jerusalem Quartet, and Michaela Fukačová. Since 2016, he has been a member of the Slovak Youth Orchestra and the European Union Youth Orchestra (EUYO), with whom he has performed in prestigious concert halls such as the Concertgebouw Amsterdam, Konzerthaus Berlin, and Elbphilharmonie, under the baton of esteemed conductors like Antonio Pappano, Manfred Honeck, and Alexandre Bloch. His accomplishments include winning awards at competitions such as the Ursula Grill Competition and the Slovak Conservatory Competition, both as a soloist and in various chamber ensembles.`
       }
     };
-    // Member click handlers
+
+    // Member → Bio Modal
     document.querySelectorAll('.member').forEach(el => {
       el.addEventListener('click', () => {
         const key = el.dataset.member;
@@ -143,13 +268,14 @@
         document.getElementById('bio-modal').classList.remove('hidden');
       });
     });
-    document.getElementById('bio-close').addEventListener('click', () => {
+    document.getElementById('bio-close').onclick = () =>
       document.getElementById('bio-modal').classList.add('hidden');
-    });
-    document.getElementById('bio-modal').addEventListener('click', e => {
-      if (e.target.id === 'bio-modal') document.getElementById('bio-modal').classList.add('hidden');
-    });
-    // ... existing scripts for scroll, lightbox, mobile menu ...
+    document.getElementById('bio-modal').onclick = e => {
+      if (e.target.id === 'bio-modal')
+        document.getElementById('bio-modal').classList.add('hidden');
+    };
+
+    // ... existing scripts for scroll fade, lightbox, mobile menu ...
   </script>
 </body>
 </html>
