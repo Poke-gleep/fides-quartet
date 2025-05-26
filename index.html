@@ -13,14 +13,8 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Montserrat', 'sans-serif'],
-            serif: ['Playfair Display', 'serif']
-          },
-          colors: {
-            darkbg: '#0a0a0a',
-            gold: '#b38136'
-          }
+          fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+          colors: { darkbg: '#0a0a0a', gold: '#b38136' }
         }
       }
     }
@@ -30,19 +24,17 @@
     .hover\:text-gold:hover { color: #b38136; }
     .hover\:underline:hover { text-decoration: underline; }
     .border-gold { border-color: #b38136; }
-    .textured-bg {
-      background-color: #0a0a0a;
-      background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 10px);
-    }
+    .textured-bg { background-color: #0a0a0a; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 10px); }
   </style>
 </head>
 <body class="textured-bg text-gray-100 font-sans">
 
   <!-- Navigation -->
-  <nav class="fixed w-full textured-bg bg-opacity-70 z-10">
+  <nav class="fixed w-full textured-bg bg-opacity-70 z-20">
     <div class="max-w-6xl mx-auto px-4 flex justify-between items-center py-4">
       <div class="text-4xl uppercase font-sans tracking-widest font-semibold">FIDES QUARTET</div>
-      <div class="space-x-6">
+      <button id="menu-btn" class="md:hidden text-3xl focus:outline-none">&#9776;</button>
+      <div id="nav-links" class="hidden md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
         <a href="#home" class="hover:text-gold hover:underline">Home</a>
         <a href="#about" class="hover:text-gold hover:underline">About Us</a>
         <a href="#concerts" class="hover:text-gold hover:underline">Concerts</a>
@@ -54,11 +46,12 @@
   </nav>
 
   <!-- Home Hero -->
-  <section id="home" class="h-screen bg-cover bg-center" style="background-image:url('images/hero.jpg')">
+  <section id="home" class="relative h-screen bg-cover bg-center" style="background-image:url('images/hero.jpg')">
+    <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-darkbg to-transparent"></div>
   </section>
 
   <!-- About Us -->
-  <section id="about" class="py-20 px-4 max-w-4xl mx-auto text-center fade-in">
+  <section id="about" class="py-20 px-4 max-w-4xl mx-auto text-center fade-in textured-bg">
     <h2 class="text-4xl font-sans font-semibold uppercase mb-6 text-gold">About Us</h2>
     <p class="mb-8">We are Fides Quartet, based in Graz ...to be continued</p>
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
@@ -86,13 +79,13 @@
   </section>
 
   <!-- Concerts -->
-  <section id="concerts" class="py-20 bg-gray-800 textured-bg">
+  <section id="concerts" class="py-20 textured-bg bg-gray-800 border-t-4 border-b-4 border-gold">
     <div class="max-w-4xl mx-auto px-4">
       <h2 class="text-4xl font-sans font-semibold uppercase mb-6 text-gold text-center">Upcoming Concerts</h2>
       <ul class="space-y-4">
         <li class="flex justify-between border-b border-gray-700 pb-2 fade-in">
           <span>May 31, 2025 – Ehrbar Saal, Vienna @ 11:00</span>
-          <a href="#" class="underline hover:text-gold hover:underline">Tickets</a>
+          <a href="#" class="text-lg text-gold">Tickets</a>
         </li>
       </ul>
     </div>
@@ -117,15 +110,15 @@
   </section>
 
   <!-- Photos -->
-  <section id="photos" class="py-20 bg-gray-800 textured-bg">
+  <section id="photos" class="py-20 textured-bg bg-gray-800 border-t-4 border-b-4 border-gold">
     <div class="max-w-5xl mx-auto px-4">
       <h2 class="text-4xl font-sans font-semibold uppercase mb-6 text-gold text-center">Photos</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <img src="images/photo2-thumb.jpeg" data-full="images/photo2.jpeg" alt="Fides Quartet Performance" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
-        <img src="images/photo3-thumb.jpg" data-full="images/photo3.jpg" alt="Fides Quartet Portrait" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
-        <img src="images/photo4-thumb.jpg" data-full="images/photo4.jpg" alt="Fides Quartet Fun" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
-        <img src="images/photo5-thumb.jpg" data-full="images/photo5.jpg" alt="Fides Quartet Fun" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
-        <img src="images/photo6-thumb.jpg" data-full="images/photo6.jpg" alt="Fides Quartet Fun" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
+        <img src="images/photo2-thumb.jpeg" data-full="images/photo2.jpeg" alt="Performance" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
+        <img src="images/photo3-thumb.jpeg" data-full="images/photo3.jpeg" alt="Portrait" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
+        <img src="images/photo4-thumb.jpeg" data-full="images/photo4.jpeg" alt="Fun" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
+        <img src="images/photo5-thumb.jpeg" data-full="images/photo5.jpeg" alt="Fun" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
+        <img src="images/photo6-thumb.jpg" data-full="images/photo6.jpg" alt="Fun" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
       </div>
     </div>
   </section>
@@ -147,52 +140,39 @@
       <textarea name="message" rows="5" placeholder="Message" required class="w-full p-3 rounded bg-gray-700"></textarea>
       <button type="submit" class="w-full py-3 font-serif text-lg uppercase tracking-wide border border-gold hover:bg-gold hover:text-gray-900 transition">Send Message</button>
     </form>
-    <p class="mt-6 text-center">Email: <a href="mailto:pa.zastko@gmail.com" class="hover:text-gold hover:underline">pa.zastko@gmail.com</a><br/>Phone: <a href="tel:+43123456789" class="hover:text-gold hover:underline">+43 1 234 567 89</a></p>
+    <p class="mt-6 text-center">Email: <a href="mailto:Fides@gmail.com" class="hover:text-gold hover:underline">Fides@gmail.com</a><br/>Phone: <a href="tel:+43123456789" class="hover:text-gold hover:underline">+43 1 234 567 89</a></p>
   </section>
 
   <script>
     // Fade-in on scroll
     const faders = document.querySelectorAll('.fade-in');
     const obs = new IntersectionObserver((entries, io) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('opacity-100','translate-y-0');
-          io.unobserve(e.target);
-        }
-      });
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('opacity-100','translate-y-0'); io.unobserve(e.target); } });
     }, { threshold: 0.3 });
-    faders.forEach(el => {
-      el.classList.add('opacity-0','translate-y-10','transition','duration-700');
-      obs.observe(el);
-    });
+    faders.forEach(el => { el.classList.add('opacity-0','translate-y-10','transition','duration-700'); obs.observe(el); });
 
     // Lightbox functionality with navigation
     const thumbs = Array.from(document.querySelectorAll('.photo-thumb'));
     const images = thumbs.map(img => img.dataset.full);
     let currentIndex = 0;
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const prevBtn = document.getElementById('lightbox-prev');
-    const nextBtn = document.getElementById('lightbox-next');
-    const closeBtn = document.getElementById('lightbox-close');
-
-    thumbs.forEach((img, idx) => {
-      img.addEventListener('click', () => {
-        currentIndex = idx;
-        lightboxImg.src = images[currentIndex];
-        lightbox.classList.remove('hidden');
-      });
-    });
-    prevBtn.addEventListener('click', () => {
+    thumbs.forEach((img, idx) => img.addEventListener('click', () => {
+      currentIndex = idx;
+      document.getElementById('lightbox-img').src = images[currentIndex];
+      document.getElementById('lightbox').classList.remove('hidden');
+    }));
+    document.getElementById('lightbox-prev').addEventListener('click', () => {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
-      lightboxImg.src = images[currentIndex];
+      document.getElementById('lightbox-img').src = images[currentIndex];
     });
-    nextBtn.addEventListener('click', () => {
+    document.getElementById('lightbox-next').addEventListener('click', () => {
       currentIndex = (currentIndex + 1) % images.length;
-      lightboxImg.src = images[currentIndex];
+      document.getElementById('lightbox-img').src = images[currentIndex];
     });
-    closeBtn.addEventListener('click', () => lightbox.classList.add('hidden'));
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.add('hidden'); });
+    document.getElementById('lightbox-close').addEventListener('click', () => document.getElementById('lightbox').classList.add('hidden'));
+    document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') document.getElementById('lightbox').classList.add('hidden'); });
+
+    // Mobile menu toggle
+    document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('nav-links').classList.toggle('hidden'));
   </script>
 </body>
 </html>
