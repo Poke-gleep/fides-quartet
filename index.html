@@ -1,0 +1,165 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Fides Quartet</title>
+  <!-- Montserrat Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config: Montserrat as sans
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          },
+          colors: {
+            darkbg: '#0a0a0a',
+            gold: '#A8896F'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .hover\:text-gold:hover { color: #A8896F; }
+    .border-gold { border-color: #A8896F; }
+  </style>
+</head>
+<body class="bg-darkbg text-gray-100 font-sans">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-darkbg bg-opacity-80 z-10">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center py-4">
+      <div class="text-2xl font-serif">Fides Quartet</div>
+      <div class="space-x-6">
+        <a href="#home" class="hover:text-gold">Home</a>
+        <a href="#about" class="hover:text-gold">About Us</a>
+        <a href="#concerts" class="hover:text-gold">Concerts</a>
+        <a href="#repertoire" class="hover:text-gold">Repertoire</a>
+        <a href="#photos" class="hover:text-gold">Photos</a>
+        <a href="#contact" class="hover:text-gold">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Hero -->
+  <section id="home" class="h-screen bg-cover bg-center" style="background-image:url('images/hero.jpeg')">
+    <!-- Hero image only, no text overlay -->
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="py-20 px-4 max-w-4xl mx-auto text-center fade-in">
+    <h2 class="text-4xl font-serif mb-6 text-gold">About Us</h2>
+    <p class="mb-8">We are Fides Quartet, based in Graz ...to be continued</p>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
+      <div>
+        <img src="images/member-moritz.jpg" alt="Moritz Engelich" class="w-32 h-32 rounded-full mx-auto mb-2 object-cover"/>
+        <p class="font-semibold">Moritz Engelich</p>
+        <p class="text-sm">1. Violin</p>
+      </div>
+      <div>
+        <img src="images/member-timotej.jpg" alt="Timotej Willewaldt" class="w-32 h-32 rounded-full mx-auto mb-2 object-cover"/>
+        <p class="font-semibold">Timotej Willewaldt</p>
+        <p class="text-sm">2. Violin</p>
+      </div>
+      <div>
+        <img src="images/member-ismini.jpg" alt="Ismini Sotiria Valma" class="w-32 h-32 rounded-full mx-auto mb-2 object-cover"/>
+        <p class="font-semibold">Ismini Sotiria Valma</p>
+        <p class="text-sm">Viola</p>
+      </div>
+      <div>
+        <img src="images/member-patrik.jpg" alt="Patrik Zastko" class="w-32 h-32 rounded-full mx-auto mb-2 object-cover"/>
+        <p class="font-semibold">Patrik Zastko</p>
+        <p class="text-sm">Cello</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concerts -->
+  <section id="concerts" class="py-20 bg-gray-800">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-4xl font-serif mb-6 text-center text-gold">Upcoming Concerts</h2>
+      <ul class="space-y-4">
+        <li class="flex justify-between border-b border-gray-700 pb-2 fade-in">
+          <span>May 31, 2025 – Ehrbar Saal, Vienna @ 11:00</span>
+          <a href="#" class="underline hover:text-gold">Tickets</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Repertoire -->
+  <section id="repertoire" class="py-20 px-4 max-w-4xl mx-auto fade-in">
+    <h2 class="text-4xl font-serif mb-6 text-center text-gold">Repertoire</h2>
+    <div class="space-y-4">
+      <details class="bg-gray-800 p-4 rounded-lg">
+        <summary class="cursor-pointer font-semibold">Our Repertoire</summary>
+        <ul class="mt-2 list-disc list-inside">
+          <li>J. Haydn: String Quartet No.5 F Minor, Op.20</li>
+          <li>W. Mozart: String Quartet No.15 D Minor, K.421</li>
+          <li>J. Brahms: String Quartet No.1</li>
+          <li>P.I. Tchaikovsky: String Quartet No.1 Op.11</li>
+          <li>D. Shostakovich: String Quartet No.8</li>
+          <li>L. Janáček: String Quartet No.1 (Kreutzer Sonate)</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- Photos -->
+  <section id="photos" class="py-20 bg-gray-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-4xl font-serif mb-6 text-center text-gold">Photos</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <a href="images/photo2.jpeg" target="_blank">
+          <img src="images/photo2-thumb.jpeg" alt="Fides Quartet Performance" class="w-full h-48 object-cover rounded-lg fade-in"/>
+        </a>
+        <a href="images/photo3.jpg" target="_blank">
+          <img src="images/photo3-thumb.jpeg" alt="Fides Quartet Portrait" class="w-full h-48 object-cover rounded-lg fade-in"/>
+        </a>
+        <a href="images/photo4.jpg" target="_blank">
+          <img src="images/photo4-thumb.jpeg" alt="Fides Quartet Fun" class="w-full h-48 object-cover rounded-lg fade-in"/>
+        </a>
+        <a href="images/photo5.jpg" target="_blank">
+          <img src="images/photo5-thumb.jpeg" alt="Fides Quartet Fun" class="w-full h-48 object-cover rounded-lg fade-in"/>
+        <!-- Add more as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-4 max-w-md mx-auto fade-in">
+    <h2 class="text-4xl font-serif mb-6 text-center text-gold">Contact</h2>
+    <form action="https://formspree.io/f/yourFormID" method="POST" class="space-y-4">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-700"/>
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-700"/>
+      <textarea name="message" rows="5" placeholder="Message" required class="w-full p-3 rounded bg-gray-700"></textarea>
+      <button type="submit" class="w-full py-3 font-serif text-lg uppercase tracking-wide border border-gold hover:bg-gold hover:text-gray-900 transition">Send Message</button>
+    </form>
+    <p class="mt-6 text-center">Email: <a href="mailto:Fides@gmail.com" class="hover:text-gold">Fides@gmail.com</a><br/>Phone: <a href="tel:+43123456789" class="hover:text-gold">+43 1 234 567 89</a></p>
+  </section>
+
+  <script>
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const obs = new IntersectionObserver((entries, io) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('opacity-100','translate-y-0');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    faders.forEach(el => {
+      el.classList.add('opacity-0','translate-y-10','transition','duration-700');
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>
