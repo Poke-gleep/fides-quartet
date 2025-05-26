@@ -19,13 +19,12 @@
     }
   </script>
   <style>
-    html{scroll-behavior:smooth}
-    .hover\:text-gold:hover{color:#b38136}
-    .hover\:underline:hover{text-decoration:underline}
-    .border-gold{border-color:#b38136}
-    .textured-bg{background-color:#0a0a0a;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.05)0,rgba(255,255,255,0.05)1px,transparent1px,transparent10px)}
-    /* Ensure lightbox images fit on mobile */
-    #lightbox-img{object-fit:contain;width:90vw;max-height:90vh}
+    html { scroll-behavior: smooth; }
+    .hover\:text-gold:hover { color: #b38136; }
+    .hover\:underline:hover { text-decoration: underline; }
+    .border-gold { border-color: #b38136; }
+    .textured-bg { background-color: #0a0a0a; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 10px); }
+    #lightbox-img { object-fit: contain; width: 90vw; max-height: 90vh; }
   </style>
 </head>
 <body class="textured-bg text-gray-100 font-sans">
@@ -48,8 +47,8 @@
 
   <!-- Mobile Menu Modal -->
   <div id="menu-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-30">
-    <div class="bg-darkbg bg-opacity-90 p-6 rounded-lg space-y-4 text-center">
-      <button id="menu-close" class="absolute top-4 right-4 text-2xl text-gray-300">&times;</button>
+    <div class="bg-darkbg bg-opacity-90 p-6 rounded-lg space-y-4 text-center relative">
+      <button id="menu-close" class="absolute top-2 right-2 text-2xl text-gray-300">&times;</button>
       <a href="#home" class="block text-lg hover:text-gold">Home</a>
       <a href="#about" class="block text-lg hover:text-gold">About Us</a>
       <a href="#concerts" class="block text-lg hover:text-gold">Concerts</a>
@@ -69,10 +68,26 @@
     <h2 class="text-4xl font-sans font-semibold uppercase mb-6 text-gold">About Us</h2>
     <p class="mb-8">We are Fides Quartet, based in Graz ...to be continued</p>
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
-      <div><img src="images/member-moritz.jpg" alt="Moritz" class="w-32 h-32 rounded-full mx-auto mb-2 object-cover"/><p class="font-semibold">Moritz Engelich</p><p class="text-sm">1. Violin</p></div>
-      <div><img src="images/member-timotej.jpg" alt="Timotej" class="w-32 h-32 rounded-full mx-auto mb-2 object-cover"/><p class="font-semibold">Timotej Willewaldt</p><p class="text-sm">2. Violin</p></div>
-      <div><img src="images/member-ismini.jpg" alt="Ismini" class="w-32 h-32 rounded-full mx-auto mb-2 object-cover"/><p class="font-semibold">Ismini Sotiria Valma</p><p class="text-sm">Viola</p></div>
-      <div><img src="images/member-patrik.jpg" alt="Patrik" class="w-32 h-32 rounded-full mx-auto mb-2 object-cover"/><p class="font-semibold">Patrik Zastko</p><p class="text-sm">Cello</p></div>
+      <div>
+        <img src="images/member-moritz.jpg" alt="Moritz Engelich" class="w-32 h-32 rounded-full mx-auto mb-2 object-cover"/>
+        <p class="font-semibold">Moritz Engelich</p>
+        <p class="text-sm">1. Violin</p>
+      </div>
+      <div>
+        <img src="images/member-timotej.jpg" alt="Timotej Willewaldt" class="w-32 h-32 rounded-full mx-auto mb-2 object-cover"/>
+        <p class="font-semibold">Timotej Willewaldt</p>
+        <p class="text-sm">2. Violin</p>
+      </div>
+      <div>
+        <img src="images/member-ismini.jpg" alt="Ismini Sotiria Valma" class="w-32 h-32 rounded-full mx-auto mb-2 object-cover"/>
+        <p class="font-semibold">Ismini Sotiria Valma</p>
+        <p class="text-sm">Viola</p>
+      </div>
+      <div>
+        <img src="images/member-patrik.jpg" alt="Patrik Zastko" class="w-32 h-32 rounded-full mx-auto mb-2 object-cover"/>
+        <p class="font-semibold">Patrik Zastko</p>
+        <p class="text-sm">Cello</p>
+      </div>
     </div>
   </section>
 
@@ -81,7 +96,10 @@
     <div class="max-w-4xl mx-auto px-4">
       <h2 class="text-4xl font-sans font-semibold uppercase mb-6 text-gold text-center">Upcoming Concerts</h2>
       <ul class="space-y-4">
-        <li class="flex justify-between border-b border-gray-700 pb-2 fade-in"><span>May 31, 2025 – Ehrbar Saal, Vienna @ 11:00</span><a href="#" class="text-lg text-gold">Tickets</a></li>
+        <li class="flex justify-between border-b border-gray-700 pb-2 fade-in">
+          <span>May 31, 2025 – Ehrbar Saal, Vienna @ 11:00</span>
+          <a href="#" class="text-lg text-gold">Tickets</a>
+        </li>
       </ul>
     </div>
   </section>
@@ -118,9 +136,9 @@
 
   <!-- Lightbox Modal -->
   <div id="lightbox" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 backdrop-blur-sm hidden z-50">
-    <button id="lightbox-prev" class="absolute left-5 text-white text-4xl z-50">&larr;</button>
+    <button id="lightbox-prev" class="absolute left-5 text-white text-4xl z-50">&#8592;</button>
     <img id="lightbox-img" class="rounded" src="" alt=""/>
-    <button id="lightbox-next" class="absolute right-5 text-white text-4xl z-50">&rarr;</button>
+    <button id="lightbox-next" class="absolute right-5 text-white text-4xl z-50">&#8594;</button>
     <button id="lightbox-close" class="absolute top-5 right-5 text-white text-3xl z-50">&times;</button>
   </div>
 
@@ -154,8 +172,12 @@
 
     // Mobile Menu
     const menuBtn=document.getElementById('menu-btn'), menuModal=document.getElementById('menu-modal'), menuClose=document.getElementById('menu-close');
-    menuBtn.onclick=()=>menuModal.classList.remove('hidden'); menuClose.onclick=()=>menuModal.classList.add('hidden');
+    menuBtn.onclick=()=>menuModal.classList.remove('hidden');
+    menuClose.onclick=()=>menuModal.classList.add('hidden');
+    // Close menu on link click
+    document.querySelectorAll('#menu-modal a').forEach(a=>a.onclick=()=>menuModal.classList.add('hidden'));
   </script>
 </body>
 </html>
+
 
