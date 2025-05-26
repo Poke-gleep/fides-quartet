@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Tailwind config: Montserrat as sans
+    // Tailwind config: Montserrat as sans, custom gold accent
     tailwind.config = {
       theme: {
         extend: {
@@ -19,7 +19,7 @@
           },
           colors: {
             darkbg: '#0a0a0a',
-            gold: '#A8896F'
+            gold: '#b38136'
           }
         }
       }
@@ -27,16 +27,20 @@
   </script>
   <style>
     html { scroll-behavior: smooth; }
-    .hover\:text-gold:hover { color: #A8896F; }
-    .border-gold { border-color: #A8896F; }
+    .hover\:text-gold:hover { color: #b38136; }
+    .border-gold { border-color: #b38136; }
+    .textured-bg {
+      background-color: #0a0a0a;
+      background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 10px);
+    }
   </style>
 </head>
-<body class="bg-darkbg text-gray-100 font-sans">
+<body class="textured-bg text-gray-100 font-sans">
 
   <!-- Navigation -->
-  <nav class="fixed w-full bg-darkbg bg-opacity-80 z-10">
+  <nav class="fixed w-full textured-bg bg-opacity-80 z-10">
     <div class="max-w-6xl mx-auto px-4 flex justify-between items-center py-4">
-      <div class="text-2xl font-serif">Fides Quartet</div>
+      <div class="text-4xl uppercase font-sans tracking-widest">FIDES QUARTET</div>
       <div class="space-x-6">
         <a href="#home" class="hover:text-gold">Home</a>
         <a href="#about" class="hover:text-gold">About Us</a>
@@ -50,12 +54,11 @@
 
   <!-- Home Hero -->
   <section id="home" class="h-screen bg-cover bg-center" style="background-image:url('images/hero.jpeg')">
-    <!-- Hero image only, no text overlay -->
   </section>
 
   <!-- About Us -->
   <section id="about" class="py-20 px-4 max-w-4xl mx-auto text-center fade-in">
-    <h2 class="text-4xl font-serif mb-6 text-gold">About Us</h2>
+    <h2 class="text-4xl font-sans uppercase mb-6 text-gold">About Us</h2>
     <p class="mb-8">We are Fides Quartet, based in Graz ...to be continued</p>
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
       <div>
@@ -82,9 +85,9 @@
   </section>
 
   <!-- Concerts -->
-  <section id="concerts" class="py-20 bg-gray-800">
+  <section id="concerts" class="py-20 bg-gray-800 textured-bg">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-4xl font-serif mb-6 text-center text-gold">Upcoming Concerts</h2>
+      <h2 class="text-4xl font-sans uppercase mb-6 text-gold text-center">Upcoming Concerts</h2>
       <ul class="space-y-4">
         <li class="flex justify-between border-b border-gray-700 pb-2 fade-in">
           <span>May 31, 2025 – Ehrbar Saal, Vienna @ 11:00</span>
@@ -95,8 +98,8 @@
   </section>
 
   <!-- Repertoire -->
-  <section id="repertoire" class="py-20 px-4 max-w-4xl mx-auto fade-in">
-    <h2 class="text-4xl font-serif mb-6 text-center text-gold">Repertoire</h2>
+  <section id="repertoire" class="py-20 px-4 max-w-4xl mx-auto fade-in textured-bg">
+    <h2 class="text-4xl font-sans uppercase mb-6 text-gold text-center">Repertoire</h2>
     <div class="space-y-4">
       <details class="bg-gray-800 p-4 rounded-lg">
         <summary class="cursor-pointer font-semibold">Our Repertoire</summary>
@@ -113,29 +116,27 @@
   </section>
 
   <!-- Photos -->
-  <section id="photos" class="py-20 bg-gray-800">
+  <section id="photos" class="py-20 bg-gray-800 textured-bg">
     <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-4xl font-serif mb-6 text-center text-gold">Photos</h2>
+      <h2 class="text-4xl font-sans uppercase mb-6 text-gold text-center">Photos</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <a href="images/photo2.jpeg" target="_blank">
-          <img src="images/photo2-thumb.jpeg" alt="Fides Quartet Performance" class="w-full h-48 object-cover rounded-lg fade-in"/>
-        </a>
-        <a href="images/photo3.jpg" target="_blank">
-          <img src="images/photo3-thumb.jpg" alt="Fides Quartet Portrait" class="w-full h-48 object-cover rounded-lg fade-in"/>
-        </a>
-        <a href="images/photo4.jpg" target="_blank">
-          <img src="images/photo4-thumb.jpg" alt="Fides Quartet Fun" class="w-full h-48 object-cover rounded-lg fade-in"/>
-        </a>
-        <a href="images/photo5.jpg" target="_blank">
-          <img src="images/photo5-thumb.jpg" alt="Fides Quartet Fun" class="w-full h-48 object-cover rounded-lg fade-in"/>
-        <!-- Add more as needed -->
+        <img src="images/photo2-thumb.jpeg" data-full="images/photo2.jpeg" alt="Fides Quartet Performance" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
+        <img src="images/photo3-thumb.jpeg" data-full="images/photo3.jpeg" alt="Fides Quartet Portrait" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
+        <img src="images/photo4-thumb.jpeg" data-full="images/photo4.jpeg" alt="Fides Quartet Fun" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
+        <img src="images/photo5-thumb.jpeg" data-full="images/photo5.jpeg" alt="Fides Quartet Fun" class="photo-thumb w-full h-48 object-cover rounded-lg fade-in cursor-pointer"/>
       </div>
     </div>
   </section>
 
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 backdrop-blur-sm hidden z-50">
+    <img id="lightbox-img" class="max-w-3xl max-h-screen rounded" src="" alt=""/>
+    <button id="lightbox-close" class="absolute top-5 right-5 text-white text-3xl">&times;</button>
+  </div>
+
   <!-- Contact -->
-  <section id="contact" class="py-20 px-4 max-w-md mx-auto fade-in">
-    <h2 class="text-4xl font-serif mb-6 text-center text-gold">Contact</h2>
+  <section id="contact" class="py-20 px-4 max-w-md mx-auto fade-in textured-bg">
+    <h2 class="text-4xl font-sans uppercase mb-6 text-gold text-center">Contact</h2>
     <form action="https://formspree.io/f/yourFormID" method="POST" class="space-y-4">
       <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-700"/>
       <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-700"/>
@@ -159,6 +160,23 @@
     faders.forEach(el => {
       el.classList.add('opacity-0','translate-y-10','transition','duration-700');
       obs.observe(el);
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('lightbox-close');
+    document.querySelectorAll('.photo-thumb').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.dataset.full;
+        lightbox.classList.remove('hidden');
+      });
+    });
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+    });
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) lightbox.classList.add('hidden');
     });
   </script>
 </body>
